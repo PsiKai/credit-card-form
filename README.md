@@ -28,8 +28,9 @@ Technologies:
 
 - `npm init` to initialize Node
 - `npx create-react-app client` to initialize React
-  **_Note this will create a git repository in the client folder._**
-  **_Run `rm rf .git` in the client folder to erase the nested repo._**
+
+  - **_Note this will create a git repository in the client folder._**
+  - **_Run `rm rf .git` in the client folder to erase the nested repo._**
 
 - `npm run dev` in the root directory to start the React server and the proxy Express server concurrently.
 
