@@ -32,30 +32,36 @@ app.listen(port, () => console.log("Server started on port " + port))
 
 
 app.post("/charge", (req, res) => {
-    const {product, token} = req.body;
-    console.log("Product", product);
+    const {product, token, info} = req.body;
+    console.log("Product", product.name);
     console.log("Price", product.price);
+    console.log(info);
     const idempotencyKey = uuid()
 
     return stripe.customers.create({
-        email: token.email,
+        name: `${info.fName} ${info.lName}`,
+        email: info.email,
         source: token.id
     })
     .then(customer => {
         stripe.charges.create({
             amount: product.price * 100,
-            currencty: "usd",
+            currency: "usd",
             customer: customer.id,
-            receipt_email: token.email,
-            description: `You purchease product.name`,
+            receipt_email: info.email,
+            description: `${info.fName} purchased ${product.name}`,
             shipping: {
-                name: token.card.name,
+                name: `${info.fName} ${product.name}`,
                 address: {
-                    country: token.card.address_country
+                    country: token.card.address_country,
+                    line1: info.address,
+                    city: info.city,
+                    state: info.state,
+                    postal_code: info.zip
                 }
             }
         }, {idempotencyKey})
     })
     .then(result => res.status(200).json(result))
-    .catch(err => console.log(err))
+    .catch(err => console.error(err))
 })
