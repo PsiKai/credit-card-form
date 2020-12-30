@@ -31,7 +31,7 @@ A simple, modular form for accepting credit card payments.
 - `npx create-react-app client` to initialize React.
 
   - **_Note this will create a git repository in the client directory._**
-  - **_Run_** `rm rf .git` **_in the client folder to erase the nested repo._**
+  - **_Run_** `rm .git -rf` **_in the client folder to erase the nested repo._**
 
 - `npm run dev` in the root directory to start the React dev server and the proxy Express server concurrently.
 
