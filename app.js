@@ -51,7 +51,7 @@ app.post("/charge", (req, res) => {
             receipt_email: info.email,
             description: `${info.fName} purchased ${product.name}`,
             shipping: {
-                name: `${info.fName} ${product.name}`,
+                name: `${info.fName} ${info.lName}`,
                 address: {
                     country: token.card.address_country,
                     line1: info.address,
