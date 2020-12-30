@@ -16,9 +16,9 @@ A simple, modular form for accepting credit card payments.
 - cors
 - uuid
 - stripe
-- concurrently -dev
-- nodemon -dev
-- dotenv -dev
+- concurrently --save-dev
+- nodemon --save-dev
+- dotenv --save-dev
 
 ### Frontend:
 
