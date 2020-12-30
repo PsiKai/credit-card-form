@@ -2,43 +2,44 @@
 
 A simple, modular form for accepting credit card payments.
 
-Technologies:
+### Technologies:
 
-- Node.js,
+- Node.js
 - React.js
 
 ## Node Modules to install
 
 ### Backend:
 
-- express,
-- body-parser,
-- cors,
-- uuid,
-- dotenv,
-- stripe,
+- express
+- body-parser
+- cors
+- uuid
+- stripe
 - concurrently -dev
+- nodemon -dev
+- dotenv -dev
 
 ### Frontend:
 
-- @stripe/stripe-js,
+- @stripe/stripe-js
 - @stripe/react-stripe-js
 
-### Scripts
+## Scripts
 
-- `npm init` to initialize Node
-- `npx create-react-app client` to initialize React
+- `npm init` to initialize Node.
+- `npx create-react-app client` to initialize React.
 
-  - **_Note this will create a git repository in the client folder._**
-  - **_Run `rm rf .git` in the client folder to erase the nested repo._**
+  - **_Note this will create a git repository in the client directory._**
+  - **_Run_** `rm rf .git` **_in the client folder to erase the nested repo._**
 
-- `npm run dev` in the root directory to start the React server and the proxy Express server concurrently.
+- `npm run dev` in the root directory to start the React dev server and the proxy Express server concurrently.
 
 - `npm start` in the client directory for React server only.
 
 - `nodemon app.js` in the root directory for Express server only.
 
-### Description of application
+## Description of application
 
 This form uses the third party Stripe to handle payment requests from credit and debit cards. A new user will need to setup an account with Stripe to obtain API keys and place them in environment variables. The UI element for the card information is provided by Stripe.
 
