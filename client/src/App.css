@@ -1,0 +1,25 @@
+input,
+button,
+h1,
+label {
+  display: block;
+  margin: 1.5rem auto;
+  width: 20rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  margin-top: 0.5rem;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+#card-element {
+  margin: 1.5rem auto;
+  width: 20rem;
+}
